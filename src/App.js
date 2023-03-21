@@ -2,7 +2,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './Create';
-import BlogDetails from './Blogdetails';
+import BlogDetails from './BlogDetails';
 
 
 function App() {
@@ -10,29 +10,28 @@ function App() {
   return (
     <Router>
 
-<div className="App">
-      {/* nested Navbar component*/}
-      <Navbar/>
-      <div className="content">
+      <div className="App">
+          <Navbar/>
+        <div className="content">
 
-        <Switch>
-          <Route exact path ="/">
-            <Home/>
-          </Route>
+         <Switch>
+           <Route exact path ="/">
+             <Home/>
+            </Route>
 
-          <Route path ="/create">
-            <Create/>
-          </Route>
+             <Route path ="/create">
+               <Create/>
+             </Route>
 
-          <Route path ="/blogs/:id">
-            <BlogDetails/>
-          </Route>
+             <Route path ="/blogs/:id">
+               <BlogDetails/>
+            </Route>
 
-        </Switch>
+         </Switch>
+       </div>
       </div>
-    </div>
 
-    </Router>
+     </Router>
     
   );
 }
